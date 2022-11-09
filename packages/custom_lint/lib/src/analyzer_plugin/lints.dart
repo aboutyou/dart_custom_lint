@@ -65,15 +65,7 @@ final _pluginNotStartedLintProvider = Provider.autoDispose
     final errorForContext = plugin.AnalysisErrorsParams(
       pubSpecFile.path,
       [
-        if (link.isLoading)
-          plugin.AnalysisError(
-            plugin.AnalysisErrorSeverity.WARNING,
-            plugin.AnalysisErrorType.LINT,
-            pluginLocationInsidePubspec,
-            'The plugin is currently starting',
-            'custom_lint_plugin_loading',
-          )
-        else if (link.hasError)
+        if (link.hasError)
           plugin.AnalysisError(
             plugin.AnalysisErrorSeverity.ERROR,
             plugin.AnalysisErrorType.LINT,
